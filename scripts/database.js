@@ -33,13 +33,24 @@ const database = {
             styleId: 3,
             timestamp: 1614659931693
         }
-    ]
+    ],
+    //add new key to the database object to keep track of the changed state as a user 
+    //chooses options with their mouse
+
+    //why this state has to be stored as an object, and not an array, string, or number?
+    //I think because it will have multiple properties/values, but they will change with each new user order?
+    //because it is a changing state?
+    orderBuilder: {},
 }
+   //Not understanding what I am supposed to be inspecting in database.orderBuilder
+   //after state is updated???
 
 export const getMetals = () => {
     return database.metals.map(metal => ({...metal}))
 }
 // Define three more functions to get copies of the sizes, styles, and customOrders arrays and export them
+//these return copies of the current state
+//other modules invoke these to GET state
 
 export const getSizes = () => {
     return database.sizes.map(size => ({...size}))
@@ -51,4 +62,18 @@ export const getStyles = () => {
 
 export const getOrders = () => {
     return database.customOrders.map(customOrder => ({...customOrder}))
+}
+
+//Define and export three functions whose responsibility is to SET state
+
+export const setMetal = (id) => {
+    database.orderBuilder.metalId = id
+}
+
+export const setSize = (id) => {
+    database.orderBuilder.sizeId = id
+}
+
+export const setStyle = (id) => {
+    database.orderBuilder.styleId = id
 }
