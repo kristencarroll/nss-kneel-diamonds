@@ -1,12 +1,22 @@
-import { getMetals } from "./database.js"
+//update the import to get the setMetal function
+import { getMetals, setMetal } from "./database.js"
 
 const metals = getMetals()
 
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "metal") {
+            //window.alert(`User chose metal ${event.target.value}`)
+            setMetal(parseInt(event.target.value))
+        }
     }
 )
+// when the user selects a radio input option, that the value of the event target 
+// will be the value attribute of the chosen option.
+
+
+
 
 export const Metals = () => {
     let html = "<ul>"

@@ -13,14 +13,14 @@ export const JewelryStyles = () => {
 
     // Use .map() for converting objects to <li> elements
     const listItemsArray = styles.map(style => {
-        //style is the only function map will accept; it is defining the parameter for the map 
+        //style is the only function map will accept; it is defining the parameter for the map function
         //function
         return `<li>
         <input type ="radio" name="size" value="${style.id}" /> ${style.style}
         </li>`
     })
     //map() is iterating the listItemsArray and the code with style and the return
-    //is the 
+    //is the function result or return
 
 
     // Join all of the strings in the array into a single string
