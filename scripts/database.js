@@ -39,7 +39,16 @@ const database = {
 export const getMetals = () => {
     return database.metals.map(metal => ({...metal}))
 }
+// Define three more functions to get copies of the sizes, styles, and customOrders arrays and export them
 
 export const getSizes = () => {
     return database.sizes.map(size => ({...size}))
+}
+
+export const getStyles = () => {
+    return database.styles.map(style => ({...style}))
+}
+
+export const getOrders = () => {
+    return database.customOrders.map(customOrder => ({...customOrder}))
 }
