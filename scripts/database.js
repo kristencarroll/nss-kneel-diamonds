@@ -77,3 +77,33 @@ export const setSize = (id) => {
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
 }
+
+
+//Define a function that executes the new task..where its SOLE responsibility is to take temporary choices
+//currently being stored in the orderBuilder state object and make them permanent
+
+//is this the function we want to call when the event occurs?
+export const addCustomOrder = () => {
+    // Copy the current state of user choices
+    const newOrder = {...database.orderBuilder}
+
+    // Add a new primary key to the object
+    //.length is the length of the array
+    //add id property to newOrder
+    const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
+
+    // Add a timestamp to the order
+    //date now adds the date from the time the order was placed
+    newOrder.timestamp = Date.now()
+
+    // Add the new order object to custom orders state
+    database.customOrders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    database.orderBuilder = {}
+
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+    //Need more understanding of this line of code.
+}
