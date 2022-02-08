@@ -13,3 +13,12 @@ renderAllHTML()
 
 // renderAllHTML function is needed later in the growth of application, 
 // because we are reacting to the user choosing options
+
+//Main module needs to be listening for the "state changed" event since it is where all the 
+//HTML is being generated
+
+document.addEventListener("stateChanged", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    renderAllHTML()
+})
+
