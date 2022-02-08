@@ -1,10 +1,12 @@
-import { getStyles } from "./database.js"
+import { getStyles, setStyle } from "./database.js"
 
 const styles = getStyles()
 
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "style")
+        setStyle(parseInt(event.target.value))
     }
 )
 
@@ -16,7 +18,7 @@ export const JewelryStyles = () => {
         //style is the only function map will accept; it is defining the parameter for the map function
         //function
         return `<li>
-        <input type ="radio" name="size" value="${style.id}" /> ${style.style}
+        <input type ="radio" name="style" value="${style.id}" /> ${style.style}
         </li>`
     })
     //map() is iterating the listItemsArray and the code with style and the return

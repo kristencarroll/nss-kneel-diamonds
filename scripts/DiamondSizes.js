@@ -1,4 +1,5 @@
-import { getSizes } from "./database.js"
+//update the import to get the setSize function
+import { getSizes, setSize } from "./database.js"
 
 const sizes = getSizes()
 
@@ -6,7 +7,9 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "size") {
-            window.alert(``)
+            //window.alert(``)
+            setSize(parseInt(event.target.value))
+            //notes & questions in Metals.js
         }
     }
 )

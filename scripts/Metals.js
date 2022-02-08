@@ -9,6 +9,8 @@ document.addEventListener(
         if (event.target.name === "metal") {
             //window.alert(`User chose metal ${event.target.value}`)
             setMetal(parseInt(event.target.value))
+            //why use parseInt() if value is already an int?
+            //is it because of the string interpolation below?
         }
     }
 )
