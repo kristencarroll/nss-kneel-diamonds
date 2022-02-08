@@ -43,7 +43,7 @@ const database = {
     orderBuilder: {},
 }
    //Not understanding what I am supposed to be inspecting in database.orderBuilder
-   //after state is updated???
+   //after state is updated???  Never mind, got it!
 
 export const getMetals = () => {
     return database.metals.map(metal => ({...metal}))
