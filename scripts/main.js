@@ -1,4 +1,6 @@
+
 import { KneelDiamonds } from "./KneelDiamonds.js"
+
 
 //main.js does not define the mainHTML structure of your application
 //that responsibility is deferred the the KneelDiamonds component
@@ -22,3 +24,14 @@ document.addEventListener("stateChanged", event => {
     renderAllHTML()
 })
 
+// let totalCost = addPrices()
+
+
+// const costString = totalCost.toLocaleString("en-US", {
+//     style: "currency",
+//     currency: "USD"
+// })
+
+// `<li>
+//     Order #${order.id} cost ${costString}
+// </li>`
