@@ -61,7 +61,7 @@ export const getStyles = () => {
 }
 
 export const getOrders = () => {
-    return database.customOrders.map(customOrder => ({...customOrder}))
+    return database.customOrders.map(order => ({...order}))
 }
 
 //Define and export three functions whose responsibility is to SET state
